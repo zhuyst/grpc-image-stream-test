@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package stream;
+
+service StreamService {
+    rpc GetImageStream(GetImageRequest) returns (stream GetImageResponse);
+    rpc GetImage(GetImageRequest) returns (GetImageResponse);
+}
+
+message GetImageRequest{}
+
+message GetImageResponse {
+    bytes images = 1;
+}
